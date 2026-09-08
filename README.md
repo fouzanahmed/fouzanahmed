@@ -1,6 +1,6 @@
 <h1 align="center">Fouzan Ahmed</h1>
 
-<p align="center">Data Engineer &nbsp;·&nbsp; Melbourne, Australia</p>
+<p align="center">Data Engineer &nbsp;·&nbsp; Australia</p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/fouzanfahmed"><img src="https://img.shields.io/badge/LinkedIn-1F2328?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
