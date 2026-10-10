@@ -3,7 +3,8 @@
 <p align="center">Data Engineer &nbsp;·&nbsp; Australia</p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/fouzanfahmed"><img src="https://img.shields.io/badge/LinkedIn-1F2328?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="https://fouzanahmed.vercel.app"><img src="https://img.shields.io/badge/Website-1F2328?style=flat-square&logo=vercel&logoColor=white" alt="Website"/></a>
+  <a href="https://www.linkedin.com/in/fouzanf-ahmed/"><img src="https://img.shields.io/badge/LinkedIn-1F2328?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
   <a href="mailto:fouzanf.ahmed@gmail.com"><img src="https://img.shields.io/badge/Email-1F2328?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
 </p>
 
@@ -13,9 +14,12 @@
 
 I build the pipeline, the warehouse and the dashboard that sits on top, and I care most about the part where it keeps running after I stop watching it.
 
-My best debugging story so far is from Principal Financial. A Morningstar ingestion job had been failing in one environment for months and nobody could reproduce it anywhere else. An S3 listing call was not paginated, so it silently stopped at 1,000 objects, and only the environment with the biggest file backlog ever crossed that line. One line to fix. A long time to find.
+My best debugging story so far is from Principal Financial. A Morningstar ingestion job had been failing in one environment for months and nobody could reproduce it anywhere else. An S3 listing call was not paginated, so it silently stopped at 1,000 objects, and only the environment with the biggest file backlog ever crossed that line. I cleared the backlog to unblock the release that day, then added pagination so it couldn't come back.
 
-Currently building an APRA superannuation analytics platform end to end, from Airflow ingestion through dbt marts to a live Power BI dashboard, with a natural language to SQL layer on top.
+These days I'm a Data Analyst at UMNT, a community organization in Darwin, where I built their first data pipeline and Power BI dashboards from scratch. On the side I'm hardening an APRA superannuation pipeline with a Claude text-to-SQL layer, and running pruning and cost experiments on a Snowflake warehouse.
+
+> *"He went from being new to the team to someone I could confidently trust with meaningful work."*
+> Rahul Yadav, my mentor at Principal ([more on my site](https://fouzanahmed.vercel.app/#recommendations))
 
 ---
 
@@ -64,7 +68,9 @@ Currently building an APRA superannuation analytics platform end to end, from Ai
   <img src="https://img.shields.io/badge/Power%20BI-1F2328?style=flat-square&logo=powerbi&logoColor=white"/>
   <img src="https://img.shields.io/badge/Tableau-1F2328?style=flat-square&logo=tableau&logoColor=white"/>
   <img src="https://img.shields.io/badge/LangChain-1F2328?style=flat-square&logo=langchain&logoColor=white"/>
-  <img src="https://img.shields.io/badge/OpenAI-1F2328?style=flat-square&logo=openai&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Claude%20API-1F2328?style=flat-square&logo=claude&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Hugging%20Face-1F2328?style=flat-square&logo=huggingface&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PyTorch-1F2328?style=flat-square&logo=pytorch&logoColor=white"/>
   <img src="https://img.shields.io/badge/n8n-1F2328?style=flat-square&logo=n8n&logoColor=white"/>
 </p>
 
@@ -74,11 +80,13 @@ Currently building an APRA superannuation analytics platform end to end, from Ai
 
 | Project | What it does | Stack |
 |---|---|---|
-| [**APRA Superannuation Analytics Platform**](https://github.com/fouzanahmed/apra-super-pipeline) | Weekly pipeline over APRA regulatory filings, landing raw files in S3, upserting into RDS Postgres, running dbt marts, and serving a live Power BI dashboard. Includes a FastAPI endpoint that turns plain English questions into SQL. | Airflow, dbt, AWS, PostgreSQL, Docker, FastAPI, Power BI |
-| **Market Data Warehouse on Snowflake** | Three-layer warehouse over five years of daily prices for 1,000 tickers. Streams and tasks drive the daily MERGE, Time Travel snapshots keep lookahead bias out of backtesting, and a clustering key fixed some ugly partition scans. | Snowflake, SQL, Python, S3 |
-| **StreamPredict** | Real-time food delivery time prediction. Kafka produces the orders, Spark Structured Streaming consumes them, and a PySpark MLlib model scores each one as it arrives. | Kafka, PySpark, Structured Streaming, MLlib |
+| [**APRA Superannuation Analytics Platform**](https://github.com/fouzanahmed/apra-super-pipeline) | Weekly Airflow pipeline over APRA's quarterly MySuper filings. Raw runs are archived in S3 and replayable, dbt models it with 21 passing tests, and a FastAPI endpoint lets Claude turn plain-English questions into SQL inside a read-only transaction. Found a silent join that left fund assets 100% NULL and took matched rows from 0 to 589. | Airflow, dbt, AWS, PostgreSQL, Claude API, Docker |
+| [**Market Data Warehouse on Snowflake**](https://github.com/fouzanahmed/snowflake-market-warehouse) | Layered warehouse over 11 years of daily prices for 501 S&P 500 tickers. 1,338,849 rows load in 2.4 seconds, a stream and task drive the daily MERGE, and a CTAS re-sort cut a query from 8 of 8 partitions to 2 of 8 without paying for a clustering key. | Snowflake, SQL, Python |
+| [**StreamPredict**](https://github.com/fouzanahmed/streampredict) | Real-time food delivery time prediction. Kafka produces the orders, Spark Structured Streaming consumes them, and a PySpark MLlib model scores each one as it arrives. Gradient boosted trees took RMSE from 7.79 to 3.10. | Kafka, PySpark, Structured Streaming, MLlib |
 | [**eSafety Threat Detection**](https://github.com/fouzanahmed/ESafety-Threat-Detection) | Multi-modal content safety platform built at a hackathon. Scores social media posts across eight harm categories using GPT-4 and Gemini, and pulls video frames with FFmpeg so it reads more than just text. | Node.js, React, TypeScript, GPT-4, Gemini, Docker |
 | **BirdTag** | Serverless AWS app that detects and tags bird species in uploaded images, audio and video. S3 upload events fan out to Lambdas for inference, thumbnails and indexing. | Lambda, S3, API Gateway, DynamoDB, Cognito, OpenCV |
+| **eSafety Kaggle Classifier** | 3rd place on the eSafety Hackathon Kaggle leaderboard. Fine-tuned DeBERTa-v3-large across 13 harmful-content categories, with focal loss and a tuned threshold per label. | PyTorch, Hugging Face, DeBERTa |
+| [**NewsFlow**](https://github.com/fouzanahmed/newsflow) | AI news digest delivered to Telegram at 9 AM every day, plus an n8n agent that turns the news into a newsletter and narrated video. | n8n, LangGraph, Claude API, SQLite |
 
 ---
 
@@ -94,7 +102,9 @@ Currently building an APRA superannuation analytics platform end to end, from Ai
 
 ### Certifications
 
-AWS Certified Developer Associate &nbsp;·&nbsp; Snowflake SnowPro Core &nbsp;·&nbsp; Microsoft Power BI Data Analyst (PL-300) &nbsp;·&nbsp; Azure Fundamentals (AZ-900)
+[Snowflake SnowPro Core](https://achieve.snowflake.com/01a9f515-65ae-4c45-ac9b-663b8b5feeaa#acc.gfk7BrMJ) &nbsp;·&nbsp; [AWS Certified AI Practitioner](https://www.credly.com/badges/109a51f2-7525-47d6-9de2-7cabdd5c6939/public_url) &nbsp;·&nbsp; [Azure Data Fundamentals (DP-900)](https://learn.microsoft.com/en-us/users/fouzanahmed-2192/transcript/d88mbremnyxkzjd) &nbsp;·&nbsp; AWS Certified Developer Associate &nbsp;·&nbsp; dbt Analytics Engineering &nbsp;·&nbsp; Power BI Data Analyst (PL-300) &nbsp;·&nbsp; Azure DevOps Engineer Expert (AZ-400)
+
+[All 14 on my site](https://fouzanahmed.vercel.app/#certifications)
 
 ---
 
