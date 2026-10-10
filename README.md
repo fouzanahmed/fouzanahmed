@@ -1,6 +1,6 @@
 <h1 align="center">Fouzan Ahmed</h1>
 
-<p align="center">Data Engineer &nbsp;·&nbsp; Australia</p>
+<p align="center">Data Engineer &amp; Analyst &nbsp;·&nbsp; Australia</p>
 
 <p align="center">
   <a href="https://fouzanahmed.vercel.app"><img src="https://img.shields.io/badge/Website-1F2328?style=flat-square&logo=vercel&logoColor=white" alt="Website"/></a>
@@ -102,9 +102,9 @@ These days I'm a Data Analyst at UMNT, a community organization in Darwin, where
 
 ### Certifications
 
-[Snowflake SnowPro Core](https://achieve.snowflake.com/01a9f515-65ae-4c45-ac9b-663b8b5feeaa#acc.gfk7BrMJ) &nbsp;·&nbsp; [AWS Certified AI Practitioner](https://www.credly.com/badges/109a51f2-7525-47d6-9de2-7cabdd5c6939/public_url) &nbsp;·&nbsp; [Azure Data Fundamentals (DP-900)](https://learn.microsoft.com/en-us/users/fouzanahmed-2192/transcript/d88mbremnyxkzjd) &nbsp;·&nbsp; AWS Certified Developer Associate &nbsp;·&nbsp; dbt Analytics Engineering &nbsp;·&nbsp; Power BI Data Analyst (PL-300) &nbsp;·&nbsp; Azure DevOps Engineer Expert (AZ-400)
+[Snowflake SnowPro Core](https://achieve.snowflake.com/01a9f515-65ae-4c45-ac9b-663b8b5feeaa#acc.gfk7BrMJ) &nbsp;·&nbsp; [AWS Certified AI Practitioner](https://www.credly.com/badges/109a51f2-7525-47d6-9de2-7cabdd5c6939/public_url) &nbsp;·&nbsp; [Azure Data Fundamentals (DP-900)](https://learn.microsoft.com/en-us/users/fouzanahmed-2192/transcript/d88mbremnyxkzjd) &nbsp;·&nbsp; AWS Certified Developer Associate &nbsp;·&nbsp; dbt Analytics Engineering &nbsp;·&nbsp; Power BI Data Analyst (PL-300)
 
-[All 14 on my site](https://fouzanahmed.vercel.app/#certifications)
+[All 11 on my site](https://fouzanahmed.vercel.app/#certifications)
 
 ---
 
@@ -112,4 +112,4 @@ These days I'm a Data Analyst at UMNT, a community organization in Darwin, where
 
 Cricket, chess, and teaching kids to code.
 
-<p align="center"><i>Open to data engineering roles across Australia.</i></p>
+<p align="center"><i>Open to data engineering and data analyst roles across Australia.</i></p>
